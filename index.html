@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		/* ------------ main css library ------------- */
+		.sliderSenior {
+			width: 300px;
+			display: inline-block;
+			position: relative;
+			height: 18px;
+			padding: 6px 0;
+		}
+		.sliderSenior .Bar {
+			border: 1px solid #aaa;
+			background: #fff;
+			color: #222;
+			height: 6px;
+			border-radius: 6px;
+		}
+		.sliderSenior .Range {
+			border-radius: 6px;
+			width: 0;
+			margin-top: -1px;
+			height: 6px;
+			background-color: #888;
+			border-radius: 6px;
+		}
+		.sliderSenior .Handle {
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			cursor: pointer;
+			border-radius: 50%;
+			outline: none;
+			box-shadow: none;
+			background-color: #E67E22;
+			border-color: #E67E22;
+		}
+		.sliderSenior .ShowValue {
+			position: absolute;
+			top: -38px;
+			left: 50%;
+			margin-left: -35px;
+			background-color: rgba(0,0,0,0.9);
+			border: 1px solid #E67E22;
+			color: #E67E22;
+			padding: 5px 15px;
+			font-size: 16px;
+			display: none;
+			width: 70px;
+			text-align: center;
+		}
+		/* extra css for demo */
+		.well {
+			/*display: none;*/
+			/*height: 0;*/
+			/*opacity: 0;*/
+		}
+		footer {
+			background-color: #555;
+			color: white;
+			padding: 15px;
+		}
+		.rectangle {
+			transform: rotate(45deg);
+		}
+		.rectangle .Txt {
+			color: whitesmoke;
+			font-size: 17px;
+			padding: 37px 0;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Logo</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Messages</a></li>
+			</ul>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group input-group">
+					<input type="text" class="form-control" placeholder="Search..">
+					<span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+				</div>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container text-center">
+	<div class="row">
+		<div id="sliderTransparency" class="sliderSenior" data-val="50" data-min="40" data-max="99">
+			<div class="Bar">
+				<div class="Range"></div>
+			</div>
+			<div class="Handle"></div>
+			<div class="ShowValue">50%</div>
+		</div>
+	</div>
+	<br><br>
+	<div class="row dragWrapper" style="height: 250px; position: relative; border: 1px solid #ddd;">
+		<div class="rectangle" style="width: 100px; height: 100px; background-color: #CCCCCC; position: relative; border: 1px solid #999999;">
+			<span class="Txt" style="display: none;">Drag me</span>
+		</div>
+	</div>
+	<br><br>
+	<div class="row text-center">
+		<button class="btn btn-primary MyBtn">fadeIn</button>
+		<br>
+		<br>
+		<button class="btn btn-primary fadeIn">fadeIn</button>
+		<button class="btn btn-primary fadeOut">fadeOut</button>
+		<button class="btn btn-primary fadeToggle">fadeToggle</button>
+		<br><br>
+		<button class="btn btn-primary slideDown">slideDown</button>
+		<button class="btn btn-primary slideUp">slideUp</button>
+		<button class="btn btn-primary slideToggle">slideToggle</button>
+	</div>
+	<br><br>
+	<div class="row">
+		<div class="col-sm-3 well">
+			<div class="well">
+				<p><a href="#">My Profile</a></p>
+				<img src="img/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+			</div>
+			<div class="well">
+				<p><a href="#">Interests</a></p>
+				<p>
+					<span class="label label-default">News</span>
+					<span class="label label-primary">W3Schools</span>
+					<span class="label label-success">Labels</span>
+					<span class="label label-info">Football</span>
+					<span class="label label-warning">Gaming</span>
+					<span class="label label-danger">Friends</span>
+				</p>
+			</div>
+			<div class="alert alert-success fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+				<p><strong>Ey!</strong></p>
+				People are looking at your profile. Find out who.
+			</div>
+			<p><a href="#">Link</a></p>
+			<p><a href="#">Link</a></p>
+			<p><a href="#">Link</a></p>
+		</div>
+		<div class="col-sm-7" id="SM7">
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-default text-left">
+						<div class="panel-body">
+							<p contenteditable="true">Status: Feeling Blue</p>
+							<button type="button" class="btn btn-default btn-sm">
+								<span class="glyphicon glyphicon-thumbs-up"></span> Like
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-3" id="pp">
+					<div class="well">
+						<p>John</p>
+						<img src="img/bird.jpg" class="img-circle" id="img-circle" height="55" width="55" alt="Avatar">
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="well">
+						<p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="well">
+						<p>Bo</p>
+						<img src="img/bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="well">
+						<p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="well">
+						<p>Jane</p>
+						<img src="img/bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="well">
+						<p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="well">
+						<p>Anja</p>
+						<img src="img/bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="well">
+						<p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 well">
+			<div class="thumbnail">
+				<p>Upcoming Events:</p>
+				<img src="img/paris.jpg" alt="Paris" width="400" height="300">
+				<p><strong>Paris</strong></p>
+				<p>Fri. 27 November 2015</p>
+				<button class="btn btn-primary">Info</button>
+			</div>
+			<div class="well">
+				<p>ADS</p>
+			</div>
+			<div class="well">
+				<p>ADS</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="container-fluid text-center">
+	<p>Footer Text</p>
+</footer>
+
+<script src="js/senior.js"></script>
+<script>
+	$('.fadeIn').on('click', function(){
+		$('.well').fadeIn(1000, 'Power1.easeOut');
+	});
+	$('.fadeOut').on('click', function(){
+		$('.well').fadeOut(1000, 'Power1.easeOut');
+	});
+	$('.fadeToggle').on('click', function(){
+		$('.well').fadeToggle(1000, 'Power1.easeOut');
+	});
+	
+	$('.slideDown').on('click', function(){
+		$('.well').slideDown(1000, 'Power1.easeOut');
+	});
+	$('.slideUp').on('click', function(){
+		$('.well').slideUp(1000, 'Power1.easeOut');
+	});
+	$('.slideToggle').on('click', function(){
+		$('.well').slideToggle(1000, 'Power1.easeOut');
+	});
+
+	$('#sliderTransparency').seniorSlider({
+		bar: $('#sliderTransparency .Bar'), handle: $('#sliderTransparency .Handle'),
+		Update: function (O, val) {
+			// O = { X:'number', Y:'number', boolX:'number', boolY:'number' }
+			console.log(O, val);
+		}, Complete: function (O, val) {
+			// O = { X:'number', Y:'number', boolX:'number', boolY:'number' }
+			console.log(O, val);
+		}
+	});
+
+
+	$('.rectangle, .MyBtn').animation(
+		{left: '1070px', borderTop: '10px solid red', paddingRight: 50, borderRadius: 80},
+		1000,
+		function(e){
+			$('.rectangle, .MyBtn').animation(
+				{left: 200, borderTop: '1px solid red', paddingRight: 0, borderRightWidth: 5},
+				2000,
+				function(_this){
+					_this.css({cursor: 'move'});
+					_this.find('.Txt').css({transform: 'rotate(-45deg)'});
+					_this.find('.Txt').fadeIn(1000);
+					$('.rectangle').seniorDraggable({ handle: $('.rectangle'), wrapper: $('.dragWrapper'),
+						onUpdate: function(O){
+							console.log(O);
+						}, onComplete: function(O){
+							console.log(O);
+						}
+					});
+				}
+			);
+		}
+	);
+	
+	$('.MyBtn')[0].css({borderRight: '5px solid #aaa', cursor: 'move', transform: 'scale(1.5) rotate(22.5deg)'},function(e){
+//		console.log(e);
+	});
+</script>
+
+</body>
+</html>
