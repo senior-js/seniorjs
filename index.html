@@ -259,7 +259,7 @@
 	<p>Footer Text</p>
 </footer>
 
-<script src="js/senior.js"></script>
+<script src="js/senior-developing.js"></script>
 <script>
 	$('.fadeIn').on('click', function(){
 		$('.well').fadeIn(1000, 'Power1.easeOut');
@@ -282,7 +282,7 @@
 	});
 
 	$('#sliderTransparency').seniorSlider({
-		bar: $('#sliderTransparency .Bar'), handle: $('#sliderTransparency .Handle'),
+		bar: '#sliderTransparency .Bar', handle: '#sliderTransparency .Handle',
 		Update: function (O, val) {
 			// O = { X:'number', Y:'number', boolX:'number', boolY:'number' }
 			console.log(O, val);
@@ -291,8 +291,8 @@
 			console.log(O, val);
 		}
 	});
-
-
+	console.log($('.rectangle').find('.Txt'));
+	
 	$('.rectangle, .MyBtn').animation(
 		{left: '1070px', borderTop: '10px solid red', paddingRight: 50, borderRadius: 80},
 		1000,
@@ -301,10 +301,10 @@
 				{left: 200, borderTop: '1px solid red', paddingRight: 0, borderRightWidth: 5},
 				2000,
 				function(_this){
-					_this.css({cursor: 'move'});
-					_this.find('.Txt').css({transform: 'rotate(-45deg)'});
-					_this.find('.Txt').fadeIn(1000);
-					$('.rectangle').seniorDraggable({ handle: $('.rectangle'), wrapper: $('.dragWrapper'),
+					$(_this).css({cursor: 'move'});
+					$(_this).find('.Txt').css({transform: 'rotate(-45deg)'});
+					$(_this).find('.Txt').fadeIn(1000);
+					$('.rectangle').seniorDraggable({ handle: '.rectangle', wrapper: '.dragWrapper',
 						onUpdate: function(O){
 							console.log(O);
 						}, onComplete: function(O){
@@ -316,7 +316,7 @@
 		}
 	);
 	
-	$('.MyBtn')[0].css({borderRight: '5px solid #aaa', cursor: 'move', transform: 'scale(1.5) rotate(22.5deg)'},function(e){
+	$('.MyBtn').css({borderRight: '5px solid #aaa', cursor: 'move', transform: 'scale(1.5) rotate(22.5deg)'},function(e){
 //		console.log(e);
 	});
 </script>
